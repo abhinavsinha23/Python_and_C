@@ -66,7 +66,7 @@ class BraccioApproach(object):
         q = bone_pose.orientation
         e = euler_from_quaternion([q.x, q.y, q.z, q.w])
         
-        # Set position above bone (as a function of its length) to be dependent on the bone's yaw angle. At lower yaw angles, the gripper will be positioned closer to the bone's midpoint than at higher yaw angles.
+        # Set position above bone (as a function of its length) to be dependent on the bone's yaw angle. At higher yaw angles, the gripper will be positioned closer to the bone's midpoint than at lower yaw angles.
         theta = e[2]
         if theta <0 and theta >= -pi/36:
             length_scale = 0.2
